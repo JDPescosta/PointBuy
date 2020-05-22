@@ -8,11 +8,16 @@ defmodule Pointbuy.Races.Race do
   import Ecto.Changeset
 
   alias Pointbuy.Races.AbilityScore
+  alias Pointbuy.EctoEnum.{Speed, Darkvision, Size}
 
   @required_fields [
 
     :name,
-    :speed
+    :speed,
+    :size,
+    :darkvision,
+    :lifespan,
+    :languages
 
   ]
 
@@ -20,7 +25,11 @@ defmodule Pointbuy.Races.Race do
   schema "races" do 
 
     field :name, :string
-    field :speed, :integer
+    field :speed, Speed
+    field :size, Size
+    field :darkvision, Darkvision
+    field :lifespan, :integer
+    field :languages, :string
     has_many :ability_scores, AbilityScore
     timestamps() 
 
@@ -30,7 +39,7 @@ defmodule Pointbuy.Races.Race do
   
     race
     |> cast(attrs, @required_fields, empty_values: [])
-    |> validate_required(@required_field)
+    |> validate_required(@required_fields)
   
   end
 

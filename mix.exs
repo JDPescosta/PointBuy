@@ -48,7 +48,8 @@ defmodule Pointbuy.MixProject do
       {:ex_machina, "~>2.1"},
       {:ecto_enum, "~>1.4"},
       {:faker, "~>0.13"},
-      {:dataloader, "~>1.0.2"}
+      {:dataloader, "~>1.0.2"},
+      {:csv, "~> 2.3"}
     ]
   end
 

@@ -18,6 +18,10 @@ defmodule PointbuyWeb.Schema.RacesTypes do
   object :race do 
     field :name, :string
     field :speed, :integer
+    field :size, :string
+    field :darkvision, :string
+    field :lifespan, :string
+    field :languages, :string 
     field :ability_scores, list_of(:ability_score) do 
       resolve dataloader(Races, :ability_scores)
     end
