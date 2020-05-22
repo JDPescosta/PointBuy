@@ -1,0 +1,36 @@
+.points-display {
+  margin-top: 16px;
+  display: flex;
+  background-color: #39383E;
+  border-radius: 10px;
+  width: 765px;
+  height: 52px;
+
+  justify-content: center;
+  align-items: center;
+  
+  span {
+    color: #FFFFFF;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 31px;
+    text-transform: capitalize;
+    padding-right: 5px;
+    
+  }
+
+  .total {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 32px;
+    padding-left: 5px;
+  }
+
+  svg {
+    fill: white;
+    height: 32px;
+    width: 32px;
+  }
+
+}

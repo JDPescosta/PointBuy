@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import IconButton from "../IconButton/IconButton";
 import PlusIcon from "../../../images/icons/plusIcon.svg";
 import MinusIcon from "../../../images/icons/minusIcon.svg";
 
 import "./AbilityScoreCounter.scss";
 
-const AbilityScoreCounter = ({ attribute, racialBonus, setPointCost }) => {
-  const [abilityScore, setAbilityScore] = useState(8);
+const AbilityScoreCounter = ({ attribute, racialBonus }) => {
+  
   const [totalScore, setTotalScore] = useState(8 + racialBonus);
+
+  useEffect(() => {
+    setTotalScore(attribute.abilityScore + racialBonus);
+  }, [attribute.pointCost])
 
   const attText = {
     strength: {
@@ -76,15 +80,18 @@ const AbilityScoreCounter = ({ attribute, racialBonus, setPointCost }) => {
   };
 
   const modifyAbilityScore = (isPositive) => {
-    let score = abilityScore;
+    let score = attribute.abilityScore;
+
     if (score < 15 && isPositive) {
       score++;
     } else if (score > 8 && !isPositive) {
       score--;
     }
-    score < 14 ? setPointCost(score - 8) : setPointCost(7 + (score - 14) * 2);
 
-    setAbilityScore(score);
+    let pointCost = score < 14 ? score - 8 : 7 + (score - 14) * 2;
+
+    attribute.setPointCost(pointCost);
+    attribute.setAbilityScore(score);
     setTotalScore(score + racialBonus);
   };
 
@@ -93,19 +100,16 @@ const AbilityScoreCounter = ({ attribute, racialBonus, setPointCost }) => {
       <div>
         <div className="score-display">
           <IconButton
-            image={"../../../images/icons/minusIcon.svg"}
-            alt="minus 1 from abilty score"
             tabCheck={false}
-            isDisabled={abilityScore <= 8 ? true : false}
+            isDisabled={attribute.abilityScore <= 8 ? true : false}
             onClick={() => modifyAbilityScore(0)}
           >
             <MinusIcon />
           </IconButton>
           <div>{totalScore}</div>
           <IconButton
-            alt="add 1 to abilty score"
             tabCheck={false}
-            isDisabled={abilityScore >= 15 ? true : false}
+            isDisabled={attribute.abilityScore >= 15 ? true : false}
             onClick={() => modifyAbilityScore(1)}
           >
             <PlusIcon />
@@ -117,10 +121,10 @@ const AbilityScoreCounter = ({ attribute, racialBonus, setPointCost }) => {
             : Math.floor((totalScore - 10) / 2)}
         </div>
       </div>
-      <h2 className="attribute">{attribute}</h2>
+      <h2 className="attribute">{attribute.name}</h2>
 
-      {attText[attribute].text.map(({ label, value }, index) => (
-        <p key={attribute + index}>
+      {attText[attribute.name].text.map(({ label, value }, index) => (
+        <p key={attribute.name + index}>
           <span>{label}</span> {value}
         </p>
       ))}

@@ -10,14 +10,13 @@ const genClasses = (isTabbing, buttonDisabled) => {
   return classes;
 }
 
-const IconButton = ({image, alt, tabCheck, isDisabled, onClick, children}) => (
+const IconButton = ({tabCheck, isDisabled, onClick, children}) => (
   <button
     onClick={onClick}
     type="button"
     className={genClasses(tabCheck, isDisabled)}
     disabled={isDisabled}
   >
-    
     {children}
   </button>
 );

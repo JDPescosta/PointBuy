@@ -1,7 +1,7 @@
 // We need to import the CSS so that webpack will load it.
 // The MiniCssExtractPlugin is used to separate it out into
 // its own CSS file.
-import css from "../css/app.scss"
+//import css from "../css/app.scss"
 
 // webpack automatically bundles all modules in your
 // entry points. Those entry points can be configured
@@ -9,16 +9,25 @@ import css from "../css/app.scss"
 //
 // Import dependencies
 //
-import "phoenix_html"
-import React, { Component } from "react"
-import ReactDOM from "react-dom"
-import Home from "./components/Home/Home"
+import "phoenix_html";
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import Home from "./components/Home/Home";
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "@apollo/react-hooks";
 
-ReactDOM.render(
-  <Home/>, document.getElementById("root")
-)
+const client = new ApolloClient({
+  uri: "http://localhost:4000/api",
+});
+
+const App = () => (
+  <ApolloProvider client={client}>
+    <Home />
+  </ApolloProvider>
+);
+
+ReactDOM.render(<App />, document.getElementById("root"));
 // Import local files
 //
 // Local files can be imported directly using relative paths, for example:
 // import socket from "./socket"
-
