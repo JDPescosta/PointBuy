@@ -17,7 +17,8 @@ defmodule Pointbuy.Races.Race do
     :size,
     :darkvision,
     :lifespan,
-    :languages
+    :languages,
+    :img_path
 
   ]
 
@@ -30,6 +31,7 @@ defmodule Pointbuy.Races.Race do
     field :darkvision, Darkvision
     field :lifespan, :integer
     field :languages, :string
+    field :img_path, :string
     has_many :ability_scores, AbilityScore
     timestamps() 
 

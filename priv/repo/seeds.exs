@@ -31,5 +31,5 @@ end
 
 File.stream!("priv/repo/seeds/races_seed.csv")
   |> Stream.drop(1)
-  |> CSV.decode(separator: ?|, headers: [:name, :speed, :size, :darkvision, :lifespan, :languages])
+  |> CSV.decode(separator: ?|, headers: [:name, :speed, :size, :darkvision, :lifespan, :languages, :img_path])
   |> Enum.each(&Pointbuy.Seeds.store_race/1)

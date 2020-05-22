@@ -22,6 +22,7 @@ defmodule PointbuyWeb.Schema.RacesTypes do
     field :darkvision, :string
     field :lifespan, :string
     field :languages, :string 
+    field :img_path, :string
     field :ability_scores, list_of(:ability_score) do 
       resolve dataloader(Races, :ability_scores)
     end
