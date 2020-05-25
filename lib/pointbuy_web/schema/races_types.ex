@@ -26,11 +26,15 @@ defmodule PointbuyWeb.Schema.RacesTypes do
     field :ability_scores, list_of(:ability_score) do 
       resolve dataloader(Races, :ability_scores)
     end
+    field :unique_racials, list_of(:unique_racial) do
+      resolve dataloader(Races, :unique_racials)
+    end
   end
 
   object :ability_score do 
     field :attribute, :string
     field :ability_bonus, :integer
+    field :dynamic_type, :string
   end
 
   object :unique_racial do 

@@ -34,7 +34,7 @@ defmodule Pointbuy.Races.Race do
     field :languages, :string
     field :img_path, :string
     has_many :ability_scores, AbilityScore
-    has_many :unique_racial, UniqueRacial 
+    has_many :unique_racials, UniqueRacial 
     timestamps() 
 
   end
