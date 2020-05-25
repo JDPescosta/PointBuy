@@ -33,4 +33,10 @@ defmodule PointbuyWeb.Schema.RacesTypes do
     field :ability_bonus, :integer
   end
 
+  object :unique_racial do 
+    field :name, :string
+    field :racial_text, :string
+  end
+
+
 end

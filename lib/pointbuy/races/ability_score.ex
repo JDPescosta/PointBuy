@@ -33,7 +33,7 @@ defmodule Pointbuy.Races.AbilityScore do
   
     ability_score
     |> cast(attrs, @required_fields ++@optional_fields, empty_values: [])
-    |> validate_required(@required_field)
+    |> validate_required(@required_fields)
   
   end
 

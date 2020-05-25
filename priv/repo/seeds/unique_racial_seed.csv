@@ -1,0 +1,51 @@
+race_id|name|racial_text
+1|Ability	Score	Increase|Your Strength score increases by 2, and your Charisma score increases by 1.
+1|Draconic Ancestry|You have draconic ancestry. Choose one of the following draconic ancestries from below. Your breath weapon and damage resistance are determined by the draconic ancestry choosen.
+1|Black Dragon Ancestor|Your damage type is Acid and your Breath Weapon takes the form of a 5 by 30ft. line (Dex. save).
+1|Blue Dragon Ancestor|Your damage type is Lightning and your Breath Weapon takes the form of a 5 by 30ft. line (Dex. save).
+1|Brass Dragon Ancestor|Your damage type is Fire and your Breath Weapon takes the form of a 5 by 30ft. line (Dex. save).
+1|Bronze Dragon Ancestor|Your damage type is Lightning and your Breath Weapon takes the form of a 5 by 30ft. line (Dex. save).
+1|Copper Dragon Ancestor|Your damage type is Acid and your Breath Weapon takes the form of a 5 by 30ft. line (Dex. save).
+1|Gold Dragon Ancestor|Your damage type is Fire and your Breath Weapon takes the form of a 15ft. cone (Dex. save).
+1|Green Dragon Ancestor|Your damage type is Poison and your Breath Weapon takes the form of a 15ft. cone (Con. save).
+1|Red Dragon Ancestor|Your damage type is Fire and your Breath Weapon takes the form of a 15ft. cone (Dex. save).
+1|Silver Dragon Ancestor|Your damage type is Cold and your Breath Weapon takes the form of a 15ft. cone (Con. save).
+1|White Dragon Ancestor|Your damage type is Cold and your Breath Weapon takes the form of a 15ft. cone (Con. save).
+1|Breath Weapon|You can use your action to exhale destructive energy. Your Draconic ancestry determines the size, shape, and damage type of the exhalation. When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your Draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your Proficiency Bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level. After you use your breath weapon, you can’t use it again until you complete a short or Long Rest.
+1|Damage Resistance|You have Resistance to the damage type associated with your Draconic ancestry.
+2|Ability	Score	Increase|Your Constitution score increases by 2, and your Wisdom score increases by 1.
+2|Dwarven Combat Training|You have proficiency with the Battleaxe, Handaxe, Light Hammer, and Warhammer.
+2|Dwarven Resilience|You have advantage on Saving Throws against poison, and you have Resistance against poison damage.
+2|Armored Movement|Your speed is not reduced by wearing Heavy Armor.
+2|Tool Proficiency|You gain proficiency with the artisan’s tools of your choice: smith’s tools, brewer’s supplies, or mason’s tools.
+2|Stonecunning|Whenever you make an Intelligence (History) check related to the Origin of stonework, you are considered proficient in the History skill and add double your Proficiency Bonus to the check, instead of your normal Proficiency Bonus.
+2|Dwarven Toughness|Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.
+3|Ability	Score	Increase|Your Dexterity score increases by 2, and your Intelligence score increases by 1.
+3|Fey Ancestry|You have advantage on saving throws against being charmed, and magic can't put you to sleep.
+3|Trance|Elves do not sleep. Instead they meditate deeply, remaining semi-conscious, for 4 hours a day. The Common word for this meditation is trance. While meditating, you dream after a fashion; such dreams are actually mental exercises that have become reflexive after years of practice. After resting in this way, you gain the same benefit a human would from 8 hours of sleep.
+3|Keen Senses|You have proficiency in the Perception skill.
+3|Cantrip|You know one cantrip of your choice from the Wizard spell list. Intelligence is your spellcasting ability for it.
+3|Elf Weapon Training|You have proficiency with the longsword, shortsword, shortbow, and longbow.
+4|Ability Score Increase|Your Intelligence score increases by 2, and your Constitution score increases by 1.
+4|Gnome Cunning|You have advantage on all Intelligence, Wisdom, and Charisma Saving Throws against magic.
+4|Artificer’s Lore|Whenever you make an Intelligence (History) check related to Magic Items, alchemical Objects, or technological devices, you can add twice your Proficiency Bonus, instead of any Proficiency Bonus you normally apply.
+4|Tinker|You have proficiency with artisan’s tools (tinker’s tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to Construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time. When you create a device, choose one of the following options:
+4|Clockwork Toy|This toy is a clockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or Soldier. When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random direction. It makes noises as appropriate to the creature it represents.
+4|Fire Starter|The device produces a miniature flame, which you can use to light a Candle, torch, or campfire. Using the device requires your action.
+4|Music Box|When opened, this music box plays a single song at a moderate volume. The box stops playing when it reaches the song’s end or when it is closed.
+5|Ability Score Increase|Your Dexterity score increases by 2, and your Charisma score increases by 1.
+5|Lucky|When you roll a 1 on The D20 for an Attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.
+5|Brave|You have advantage on Saving Throws against being Frightened.
+5|Halfling Nimbleness|You can move through the space of any creature that is of a size larger than yours.
+5|Naturally Stealthy|You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.
+6|Ability Score Increase|Your Charisma score increases by 2, and two other Ability Scores of your choice increase by 1.
+6|Fey Ancestry|You have advantage on Saving Throws against being Charmed, and magic can’t put you to sleep.
+6|Skill Versatility|You gain proficiency in two Skills of your choice.
+7|Ability Score Increase|Your Strength score increases by 2, and your Constitution score increases by 1.
+7|Menacing|You gain proficiency in the Intimidation skill.
+7|Relentless Endurance|When you are reduced to 0 Hit Points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a Long Rest.
+7|Savage Attacks|When you score a critical hit with a melee weapon Attack, you can roll one of the weapon’s damage dice one additional time and add it to the extra damage of the critical hit.
+8|Ability Score Increase|All of your Ability Scores each increase by 1.
+9|Ability Score Increase|Your Intelligence score increases by 1, and your Charisma score increases by 2.
+9|Hellish Resistance|You have Resistance to fire damage.
+9|Infernal Legacy|You know the Thaumaturgy cantrip. When you reach 3rd Level, you can cast the Hellish Rebuke spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a Long Rest. When you reach 5th Level, you can cast the Darkness spell once with this trait and regain the ability to do so when you finish a Long Rest. Charisma is your Spellcasting Ability for these Spells.

@@ -8,6 +8,7 @@ defmodule Pointbuy.Races.Race do
   import Ecto.Changeset
 
   alias Pointbuy.Races.AbilityScore
+  alias Pointbuy.Races.UniqueRacial
   alias Pointbuy.EctoEnum.{Speed, Darkvision, Size}
 
   @required_fields [
@@ -33,6 +34,7 @@ defmodule Pointbuy.Races.Race do
     field :languages, :string
     field :img_path, :string
     has_many :ability_scores, AbilityScore
+    has_many :unique_racials, UniqueRacial 
     timestamps() 
 
   end
