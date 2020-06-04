@@ -4,19 +4,10 @@ import ResetIcon from '../../../images/icons/refresh.svg';
 
 import './PointsDisplay.scss'
 
-const PointsDisplay = ({ attributes }) => {
-  const reset = () => {
-    attributes.map((att) => {
-      att.setPointCost(0);
-      att.setAbilityScore(8);
-    });
-    setTotal(0);
-  };
-
-  const [total, setTotal] = useState(0);
-
+const PointsDisplay = ({ attributes, reset, setTotalCost, totalCost }) => {
+  
   useEffect(() => {
-    setTotal(attributes.reduce((acc, cur) => {
+    setTotalCost(attributes.reduce((acc, cur) => {
        return acc+cur.pointCost;  
     }, 0))
   }, [attributes])
@@ -28,7 +19,7 @@ const PointsDisplay = ({ attributes }) => {
         <span key={att.name.substring(0, 3)} >{`${att.name.substring(0, 3)}: ${att.pointCost} | `}</span>
       ))}
       <span className='total'>
-        {total}/27 Points
+        {totalCost}/27 Points
       </span>
       <IconButton className='reset' tabCheck={0} onClick={reset} isDisabled={false} >
         <ResetIcon />

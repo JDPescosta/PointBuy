@@ -1,13 +1,23 @@
 import { gql } from "apollo-boost";
 
 const getRaces = gql`
-  query getraces {
-    races {
+  query getraces{
+    races{
       name
       speed
-      abilityScores {
-        abilityBonus
+      size
+      darkvision
+      lifespan
+      languages
+      imgPath
+      abilityScores{
         attribute
+        abilityBonus
+        dynamicType
+      }
+      uniqueRacials{
+        name
+        racialText
       }
     }
   }

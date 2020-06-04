@@ -11,7 +11,7 @@ const AbilityScoreCounter = ({ attribute, racialBonus }) => {
 
   useEffect(() => {
     setTotalScore(attribute.abilityScore + racialBonus);
-  }, [attribute.pointCost])
+  }, [attribute.pointCost, racialBonus])
 
   const attText = {
     strength: {
