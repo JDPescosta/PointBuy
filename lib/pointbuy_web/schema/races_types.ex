@@ -21,13 +21,12 @@ defmodule PointbuyWeb.Schema.RacesTypes do
     field :size, :string
     field :darkvision, :string
     field :lifespan, :string
-    field :languages, :string 
     field :img_path, :string
     field :ability_scores, list_of(:ability_score) do 
       resolve dataloader(Races, :ability_scores)
     end
     field :unique_racials, list_of(:unique_racial) do
-      resolve dataloader(Races, :unique_racials)
+      resolve &PointbuyWeb.Resolvers.Races.load_unique_racials/3
     end
   end
 

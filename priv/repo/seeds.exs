@@ -54,13 +54,9 @@ defmodule Pointbuy.Seeds do
 
 end
 
-Pointbuy.Seeds.seed_from_csv("races_seed", [:name, :speed, :size, :darkvision, :lifespan, :languages, :img_path], &Pointbuy.Seeds.store_race/1)
+Pointbuy.Seeds.seed_from_csv("races_seed", [:name, :speed, :size, :darkvision, :lifespan, :img_path], &Pointbuy.Seeds.store_race/1)
 Pointbuy.Seeds.seed_from_csv("unique_racial_seed", [:race_id, :name, :racial_text], &Pointbuy.Seeds.store_racial/1)
 Pointbuy.Seeds.seed_from_csv("ability_score_seed", [:race_id, :attribute, :ability_bonus, :dynamic_type], &Pointbuy.Seeds.store_ability_score/1)
 
 
 
-# File.stream!("priv/repo/seeds/races_seed.csv")
-#   |> Stream.drop(1)
-#   |> CSV.decode(separator: ?|, headers: [:name, :speed, :size, :darkvision, :lifespan, :languages, :img_path])
-#   |> Enum.each(&Pointbuy.Seeds.store_race/1)

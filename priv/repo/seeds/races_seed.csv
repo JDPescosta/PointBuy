@@ -1,10 +1,10 @@
-name|speed|size|darkvision|lifespan|languages|img_path
-Dragonborn|30|medium|0|80|Common and Draconic|https://pointbuy-calc.s3-us-west-2.amazonaws.com/race-images/dragonborn.png
-Hill Dwarf|25|medium|60|350|Common and Dwarvish|https://pointbuy-calc.s3-us-west-2.amazonaws.com/race-images/hilldwarf.png
-High Elf|30|medium|60|750|Common, Elvish and one extra of language your choice|https://pointbuy-calc.s3-us-west-2.amazonaws.com/race-images/highelf.png
-Rock Gnome|25|small|60|500|Common and Gnomish|https://pointbuy-calc.s3-us-west-2.amazonaws.com/race-images/rockgnome.png
-Lightfoot Halfling|25|small|0|150|Common and Halfling|https://pointbuy-calc.s3-us-west-2.amazonaws.com/race-images/lightfoothalfling.png
-Half-Elf|30|medium|60|180|Common, Elvish and one extra of language your choice|https://pointbuy-calc.s3-us-west-2.amazonaws.com/race-images/halfelf.png
-Half-Orc|30|medium|60|75|Common and Orcish|https://pointbuy-calc.s3-us-west-2.amazonaws.com/race-images/halforc.png
-Human|30|medium|0|90|Common and one extra of language your choice|https://pointbuy-calc.s3-us-west-2.amazonaws.com/race-images/human.png
-Tiefling|30|medium|60|100|Common and Infernal|https://pointbuy-calc.s3-us-west-2.amazonaws.com/race-images/tiefling.png
+name|speed|size|darkvision|lifespan|img_path
+Dragonborn|30|medium|0|80|https://pointbuy-calc.s3-us-west-2.amazonaws.com/race-images/dragonborn.png
+Hill Dwarf|25|medium|60|350|https://pointbuy-calc.s3-us-west-2.amazonaws.com/race-images/hilldwarf.png
+High Elf|30|medium|60|750|https://pointbuy-calc.s3-us-west-2.amazonaws.com/race-images/highelf.png
+Rock Gnome|25|small|60|500|https://pointbuy-calc.s3-us-west-2.amazonaws.com/race-images/rockgnome.png
+Lightfoot Halfling|25|small|0|150|https://pointbuy-calc.s3-us-west-2.amazonaws.com/race-images/lightfoothalfling.png
+Half-Elf|30|medium|60|180|https://pointbuy-calc.s3-us-west-2.amazonaws.com/race-images/halfelf.png
+Half-Orc|30|medium|60|75|https://pointbuy-calc.s3-us-west-2.amazonaws.com/race-images/halforc.png
+Human|30|medium|0|90|https://pointbuy-calc.s3-us-west-2.amazonaws.com/race-images/human.png
+Tiefling|30|medium|60|100|https://pointbuy-calc.s3-us-west-2.amazonaws.com/race-images/tiefling.png

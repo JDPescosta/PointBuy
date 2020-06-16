@@ -8,7 +8,6 @@ const getRaces = gql`
       size
       darkvision
       lifespan
-      languages
       imgPath
       abilityScores{
         attribute
