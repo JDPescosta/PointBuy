@@ -15,9 +15,19 @@ const PointsDisplay = ({ attributes, reset, setTotalCost, totalCost }) => {
 
   return (
     <div className="points-display">
-      {attributes.map((att) => (
-        <span key={att.name.substring(0, 3)} >{`${att.name.substring(0, 3)}: ${att.pointCost} | `}</span>
-      ))}
+      <div>
+        <div>
+          {attributes.slice(0,3).map((att) => (
+            <span key={att.name.substring(0, 3)} >{`${att.name.substring(0, 3)}: ${att.pointCost} | `}</span>
+          ))}
+        </div>
+        <div>
+        {attributes.slice(3,6).map((att) => (
+          <span key={att.name.substring(0, 3)} >{`${att.name.substring(0, 3)}: ${att.pointCost} | `}</span>
+        ))}
+        </div>
+      </div>
+      
       <span className='total'>
         {totalCost}/27 Points
       </span>

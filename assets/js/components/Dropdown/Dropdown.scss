@@ -77,5 +77,44 @@
         color: #39383e;
       }
     }
+    ul::-webkit-scrollbar {
+      width: 12px;
+      height: 85%;
+    }
+  
+    ul::-webkit-scrollbar-track {
+      box-shadow: none;
+      border-radius: 10px;
+    }
+  
+    ul::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: #282624;
+    }
+  
+    ul:hover::-webkit-scrollbar-thumb {
+      background-color: #ffffff;
+    }
   }
+}
+
+@media screen and (max-width: 655px){
+
+  .dropdown{
+    width: 92%;
+    height: auto;
+    margin:0;
+    div{
+      h1{
+        margin-top: 5%;
+        margin-bottom: 2%;
+        text-align: center;
+      }
+    }
+    .dropdown-option-container {
+    
+      text-align: center;
+    }
+  }
+
 }

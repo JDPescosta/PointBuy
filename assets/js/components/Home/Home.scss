@@ -1,35 +1,126 @@
-
 .home {
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
+
   background-color: #282624;
-  width: 100vw;
-  height: 100vh;
+  
+  min-width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  min-width: 100vw;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 
   .left-container {
     left: 0;
-    width: 60vw;
-    min-width: 770px;
-    margin-left: 20px;
+    width: 55vw;
+    max-width: 970px;
+    margin: 1%;
     display: flex;
-    
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 
     .attribute-container {
-
       display: flex;
-      justify-content: center;
-      
+
+      justify-content: space-evenly;
+
       flex-direction: row;
       flex-wrap: wrap;
-      
+      width: 90%;
+      min-width: 340px;
+      max-width: 840px;
     }
   }
 
+  .right-container {
+    width: 35vw;
+    height: 90vh;
+    
+    //min-width: 400px;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 
+    img {
+      margin: 1%;
+      max-width: 60%;
+      max-height: 60%;
+      width: auto;
+      height: auto;
+    }
+
+    .unique-racials-container {
+      width: 95%;
+      height: 35%;
+      margin: 3% 5% 5% 5%;
+      overflow-y: auto;
+      padding: 5px;
+
+      h3 {
+        margin-top: 0;
+        color: #ffffff;
+        font-family: Bangers;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 1px;
+      }
+      p {
+        color: #ffffff;
+        font-family: Montserrat;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 30px;
+      }
+    }
+
+    .unique-racials-container::-webkit-scrollbar {
+      width: 12px;
+      height: 85%;
+    }
+
+    .unique-racials-container::-webkit-scrollbar-track {
+      box-shadow: none;
+      border-radius: 10px;
+    }
+
+    .unique-racials-container::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: #282624;
+    }
+
+    .unique-racials-container:hover::-webkit-scrollbar-thumb {
+      background-color: #ffffff;
+    }
+  }
+}
+
+@media screen and (max-width: 1160px) {
+  .home{
+    .left-container{
+      top:0;
+      left:0;
+      width: 98vw;
+
+      .attribute-container {
+        justify-content: space-between;
+      }
+
+    }
+    .right-container{
+      width: 95%;
+    }
+  }
+  
   
 }

@@ -1,27 +1,42 @@
 .points-display {
   margin-top: 16px;
   display: flex;
-  background-color: #39383E;
+  background-color: #39383e;
   border-radius: 10px;
-  width: 765px;
-  height: 52px;
-
-  justify-content: center;
-  align-items: center;
+  width: 85%;
   
-  span {
-    color: #FFFFFF;
-    font-family: Montserrat;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 31px;
-    text-transform: capitalize;
-    padding-right: 5px;
+  height: 5vh;
+  min-height: 45px;
+
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  //white-space: nowrap;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    div{
+      span {
+        color: #ffffff;
+        font-family: Montserrat;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 31px;
+        text-transform: capitalize;
+        padding-right: 5px;
+      }
+    }
     
   }
 
   .total {
-    font-size: 25px;
+    color: #ffffff;
+    font-family: Montserrat;
+    text-transform: capitalize;
+    font-size: 22px;
     font-weight: 700;
     line-height: 32px;
     padding-left: 5px;
@@ -32,5 +47,74 @@
     height: 32px;
     width: 32px;
   }
+}
 
+@media screen and (max-width: 1344px) {
+  .points-display {
+    div {
+      div {
+        span {
+          font-size: 16px;
+        }
+      }
+    }
+    .total {
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1160px) {
+  .points-display {
+    width: 100%;
+    div {
+      div {
+        span {
+          font-size: 2.5vw;
+        }
+      }
+    }
+    .total {
+      font-size: 3vw;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .points-display {
+    width: 100%;
+    div {
+      div {
+        span {
+          font-size: 2.5vw;
+        }
+      }
+    }
+    .total {
+      font-size: 3vw;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .points-display {
+    width: 100%;
+    div {
+      top:0;
+      
+      height: 20px;
+      flex-direction: column;
+      justify-content: center;
+     
+      div {
+        flex-direction: row;
+        span {
+          font-size: 15px;
+        }
+      }
+    }
+    .total {
+      font-size: 18px;
+    }
+  }
 }

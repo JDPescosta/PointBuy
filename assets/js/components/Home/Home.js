@@ -11,12 +11,11 @@ const Home = () => {
 
   const { races } = data || [];
 
-  //console.log(loading, error, data);
-
   const [selectedRace, setSelectedRace] = useState(null);
 
   useEffect(() => {
     if (data !== undefined) setSelectedRace(races[3]);
+    console.log(data);
   }, [data]);
 
   const [str, setStr] = useState(8);
@@ -34,6 +33,7 @@ const Home = () => {
   const [chaCost, setChaCost] = useState(0);
 
   const [totalCost, setTotalCost] = useState(0);
+  const [dynamicScore, setDynamicScore] = useState(0);
 
   const reset = () => {
     attributes.map((att) => {
@@ -47,11 +47,11 @@ const Home = () => {
     const { abilityScores } = selectedRace || [];
 
     for (let i = 0; i < abilityScores.length; i++) {
-      if (
-        attName.substring(0, 3) === abilityScores[i].attribute &&
-        abilityScores[i].dynamicType === ""
-      ) {
+      if (attName.substring(0, 3) === abilityScores[i].attribute && abilityScores[i].dynamicType === "") {
         return abilityScores[i].abilityBonus;
+      }
+      else if (attName.substring(0,3) !== abilityScores[i].attribute && abilityScores[i].dynamicType === "other"){
+        return  "dynamic";
       }
     }
     return 0;
@@ -118,10 +118,31 @@ const Home = () => {
                   key={index}
                   attribute={att}
                   racialBonus={checkRacialBonus(att.name)}
+                  dynamicScore={dynamicScore}
+                  setDynamicScore={setDynamicScore}
                 ></AbilityScoreCounter>
               ))}
             </div>
-            <PointsDisplay attributes={attributes} reset={reset} setTotalCost={setTotalCost} totalCost={totalCost} ></PointsDisplay>
+            <PointsDisplay
+              attributes={attributes}
+              reset={reset}
+              setTotalCost={setTotalCost}
+              totalCost={totalCost}
+            ></PointsDisplay>
+          </div>
+          <div className="right-container">
+            <img
+              src={selectedRace.imgPath}
+              alt={`An image of a ${selectedRace}`}
+            ></img>
+            <div className="unique-racials-container">
+              {selectedRace.uniqueRacials.sort().map((racial) => (
+                <>
+                  <h3>{racial.name}:</h3>
+                  <p>{racial.racialText}</p>
+                </>
+              ))}
+            </div>
           </div>
         </div>
       )}

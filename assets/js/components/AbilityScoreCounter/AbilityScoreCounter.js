@@ -2,16 +2,32 @@ import React, { useState, useEffect } from "react";
 import IconButton from "../IconButton/IconButton";
 import PlusIcon from "../../../images/icons/plusIcon.svg";
 import MinusIcon from "../../../images/icons/minusIcon.svg";
+import Chevron from "../../../images/icons/chevron-up.svg";
+import DoubleChevron from "../../../images/icons/double-chevron-up.svg";
+import ChevronOutline from "../../../images/icons/chevron-outline.svg";
 
 import "./AbilityScoreCounter.scss";
 
-const AbilityScoreCounter = ({ attribute, racialBonus }) => {
-  
-  const [totalScore, setTotalScore] = useState(8 + racialBonus);
+const AbilityScoreCounter = ({
+  attribute,
+  racialBonus,
+  dynamicScore,
+  setDynamicScore,
+}) => {
+  const [totalScore, setTotalScore] =
+    racialBonus === "dynamic" ? useState(8) : useState(8 + racialBonus);
+  const [dynamicFlag, setDynamicFlag] = useState(false);
 
   useEffect(() => {
-    setTotalScore(attribute.abilityScore + racialBonus);
-  }, [attribute.pointCost, racialBonus])
+
+    let dynamicBonus = dynamicFlag ? 1 : 0;
+
+    setTotalScore(
+      racialBonus === "dynamic"
+        ? attribute.abilityScore + dynamicBonus
+        : attribute.abilityScore + racialBonus
+    );
+  }, [attribute.pointCost, racialBonus, dynamicFlag]);
 
   const attText = {
     strength: {
@@ -79,6 +95,16 @@ const AbilityScoreCounter = ({ attribute, racialBonus }) => {
     },
   };
 
+  const modifyDynamicScore = () => {
+    
+    if (!dynamicFlag && dynamicScore > 1) return;
+    
+    let modifier = dynamicFlag ? -1 : 1;
+
+    setDynamicScore(dynamicScore + modifier);
+    setDynamicFlag(!dynamicFlag);
+  };
+
   const modifyAbilityScore = (isPositive) => {
     let score = attribute.abilityScore;
 
@@ -92,7 +118,6 @@ const AbilityScoreCounter = ({ attribute, racialBonus }) => {
 
     attribute.setPointCost(pointCost);
     attribute.setAbilityScore(score);
-    setTotalScore(score + racialBonus);
   };
 
   return (
@@ -121,7 +146,31 @@ const AbilityScoreCounter = ({ attribute, racialBonus }) => {
             : Math.floor((totalScore - 10) / 2)}
         </div>
       </div>
-      <h2 className="attribute">{attribute.name}</h2>
+      <h2 className="attribute">
+        {attribute.name}
+        {racialBonus === "dynamic" && (dynamicFlag || dynamicScore < 2) && (
+          <span>
+            <IconButton
+              tabCheck={false}
+              isDisabled={false}
+              onClick={modifyDynamicScore}
+            >
+              {dynamicFlag && <Chevron className='chevron'/>}
+              {!dynamicFlag && <ChevronOutline className='chevron'/>} 
+            </IconButton>
+          </span>
+        )}
+        {racialBonus === 1 && 
+          <span>
+            <Chevron className='chevron'/>
+          </span>
+        }
+        {racialBonus === 2 && 
+          <span>
+            <DoubleChevron className='chevron'/>
+          </span>
+        }
+      </h2>
 
       {attText[attribute.name].text.map(({ label, value }, index) => (
         <p key={attribute.name + index}>

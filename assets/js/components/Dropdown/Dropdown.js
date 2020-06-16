@@ -44,9 +44,9 @@ const Dropdown = ({ onOptionClick, options, selectedOption }) => {
     <div className="dropdown" ref={dropdownOptions}>
       <div onClick={() => setDropdownOpen(!dropdownOpen)}>
         <h1>{selectedOption.name}
-        <span>
-          <DropdownIcon />
-        </span>
+          <span>
+            <DropdownIcon />
+          </span>
         </h1>
         
       </div>
