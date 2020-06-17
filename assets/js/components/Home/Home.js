@@ -15,7 +15,6 @@ const Home = () => {
 
   useEffect(() => {
     if (data !== undefined) setSelectedRace(races[3]);
-    console.log(data);
   }, [data]);
 
   const [str, setStr] = useState(8);
@@ -137,10 +136,10 @@ const Home = () => {
             ></img>
             <div className="unique-racials-container">
               {selectedRace.uniqueRacials.sort().map((racial) => (
-                <>
+                <div key={racial.name}>
                   <h3>{racial.name}:</h3>
                   <p>{racial.racialText}</p>
-                </>
+                </div>
               ))}
             </div>
           </div>

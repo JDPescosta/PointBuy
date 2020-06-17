@@ -54,7 +54,7 @@ const Dropdown = ({ onOptionClick, options, selectedOption }) => {
         <div className="dropdown-option-container" >
           <ul>
             {filteredOptions.map((option) => (
-              <li onClick={() => handleOnClick(option)} value={option}>
+              <li key={option} onClick={() => handleOnClick(option)} value={option}>
                 {option}
               </li>
             ))}
