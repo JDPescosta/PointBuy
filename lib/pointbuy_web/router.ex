@@ -25,5 +25,4 @@ defmodule PointbuyWeb.Router do
     forward("/graphiql", Absinthe.Plug.GraphiQL, schema: PointbuyWeb.Schema)
     forward("/", Absinthe.Plug, schema: PointbuyWeb.Schema)
   end
-
 end
