@@ -4,7 +4,6 @@ defmodule Pointbuy.Repo.Migrations.UpdateRaceTable do
   alias Pointbuy.EctoEnum.{Speed, Darkvision, Size}
 
   def up do
-
     Speed.create_type()
     Darkvision.create_type()
     Size.create_type()
@@ -17,12 +16,9 @@ defmodule Pointbuy.Repo.Migrations.UpdateRaceTable do
       remove :speed
       add :speed, :speed, null: false
     end
-
-    
   end
 
   def down do
-    
     alter table(:races) do
       remove :languages
       remove :darkvision
