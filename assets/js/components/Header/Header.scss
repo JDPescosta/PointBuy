@@ -1,5 +1,7 @@
+@import "../../../scss/variables";
+
 .header {
-  background-color: #39383e;
+  background-color: $background-highlight-color;
   border-radius: 10px;
   width: 85%;
   height: 110px;
@@ -8,8 +10,8 @@
   align-items: center;
   justify-content: space-evenly;
 
-  color: #fff;
-  font-family: Montserrat;
+  color: $text-color;
+  font-family: $text-font;
   margin-bottom: 3%;
 
   .stat-container {
@@ -21,13 +23,13 @@
     align-items: center;
     justify-content: space-between;
 
-    div {
+    .stat-column {
       height: 100%;
       width: 48%;
       display: flex;
       flex-direction: column;
 
-      div {
+      .stat-row {
         width: 100%;
         height: 50%;
         display: flex;
@@ -37,7 +39,7 @@
         h2 {
           margin: 7px 0 7px 0;
           text-align: left;
-          font-family: Bangers;
+          font-family: $heading-font;
           font-weight: 300;
           font-size: 26px;
           letter-spacing: 1px;

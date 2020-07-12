@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Home.scss";
-import AbilityScoreCounter from "../AbilityScoreCounter/AbilityScoreCounter";
-import PointsDisplay from "../PointsDisplay/PointsDisplay";
-import Header from "../Header/Header";
+import AbilityScoreCounter from "../../components/AbilityScoreCounter/AbilityScoreCounter";
+import PointsDisplay from "../../components/PointsDisplay/PointsDisplay";
+import Header from "../../components/Header/Header";
 import { useQuery } from "@apollo/react-hooks";
 import getRaces from "../../graphql/getRaces";
 
@@ -46,11 +46,16 @@ const Home = () => {
     const { abilityScores } = selectedRace || [];
 
     for (let i = 0; i < abilityScores.length; i++) {
-      if (attName.substring(0, 3) === abilityScores[i].attribute && abilityScores[i].dynamicType === "") {
+      if (
+        attName.substring(0, 3) === abilityScores[i].attribute &&
+        abilityScores[i].dynamicType === ""
+      ) {
         return abilityScores[i].abilityBonus;
-      }
-      else if (attName.substring(0,3) !== abilityScores[i].attribute && abilityScores[i].dynamicType === "other"){
-        return  "dynamic";
+      } else if (
+        attName.substring(0, 3) !== abilityScores[i].attribute &&
+        abilityScores[i].dynamicType === "other"
+      ) {
+        return "dynamic";
       }
     }
     return 0;

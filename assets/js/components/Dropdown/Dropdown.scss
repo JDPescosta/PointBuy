@@ -1,6 +1,8 @@
+@import "../../../scss/variables";
+
 .dropdown {
-  color: #fff;
-  font-family: Bangers;
+  color: $text-color;
+  font-family: $heading-font;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -12,10 +14,10 @@
     align-items: center;
     justify-self: center;
     h1 {
-      background-color: #39383e;
+      background-color: $background-highlight-color;
       padding-left: 3px;
       border-radius: 10px;
-      color: #fff;
+      color: $text-color;
       width: 100%;
       font-size: 40px;
       line-height: 42px;
@@ -31,7 +33,7 @@
           position: absolute;
 
           top: 65%;
-          fill:#39383e;
+          fill:$background-highlight-color;
           height: 25px;
           width: 25px;
         }
@@ -48,10 +50,10 @@
     //align-items: flex-end;
     position: absolute;
     top: 83%;
-    background-color: #39383e;
+    background-color: $background-highlight-color;
     z-index: 1;
     width: 100%;
-    font-family: Montserrat;
+    font-family: $text-font;
 
     ul {
       padding: 0;
@@ -73,8 +75,8 @@
       }
 
       li:hover {
-        background-color: #fff;
-        color: #39383e;
+        background-color: #ffffff;
+        color: $background-highlight-color;
       }
     }
     ul::-webkit-scrollbar {
@@ -89,7 +91,7 @@
   
     ul::-webkit-scrollbar-thumb {
       border-radius: 10px;
-      background-color: #282624;
+      background-color: $background-color;
     }
   
     ul:hover::-webkit-scrollbar-thumb {

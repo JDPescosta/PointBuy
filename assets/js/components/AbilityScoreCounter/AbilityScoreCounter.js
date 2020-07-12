@@ -19,7 +19,6 @@ const AbilityScoreCounter = ({
   const [dynamicFlag, setDynamicFlag] = useState(false);
 
   useEffect(() => {
-
     let dynamicBonus = dynamicFlag ? 1 : 0;
 
     setTotalScore(
@@ -96,9 +95,8 @@ const AbilityScoreCounter = ({
   };
 
   const modifyDynamicScore = () => {
-    
     if (!dynamicFlag && dynamicScore > 1) return;
-    
+
     let modifier = dynamicFlag ? -1 : 1;
 
     setDynamicScore(dynamicScore + modifier);
@@ -121,8 +119,8 @@ const AbilityScoreCounter = ({
   };
 
   return (
-    <div className="AbilityScoreCounter">
-      <div>
+    <div className="ability-score-counter">
+      <div className="counter-container">
         <div className="score-display">
           <IconButton
             tabCheck={false}
@@ -155,21 +153,21 @@ const AbilityScoreCounter = ({
               isDisabled={false}
               onClick={modifyDynamicScore}
             >
-              {dynamicFlag && <Chevron className='chevron'/>}
-              {!dynamicFlag && <ChevronOutline className='chevron'/>} 
+              {dynamicFlag && <Chevron className="chevron" />}
+              {!dynamicFlag && <ChevronOutline className="chevron" />}
             </IconButton>
           </span>
         )}
-        {racialBonus === 1 && 
+        {racialBonus === 1 && (
           <span>
-            <Chevron className='chevron'/>
+            <Chevron className="chevron" />
           </span>
-        }
-        {racialBonus === 2 && 
+        )}
+        {racialBonus === 2 && (
           <span>
-            <DoubleChevron className='chevron'/>
+            <DoubleChevron className="chevron" />
           </span>
-        }
+        )}
       </h2>
 
       {attText[attribute.name].text.map(({ label, value }, index) => (

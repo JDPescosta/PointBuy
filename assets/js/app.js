@@ -12,7 +12,7 @@
 import "phoenix_html";
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import Home from "./components/Home/Home";
+import Home from "./containers/Home/Home";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 

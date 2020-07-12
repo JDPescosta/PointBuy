@@ -3,7 +3,6 @@ import DropdownIcon from "../../../images/icons/arrow.svg";
 import "./Dropdown.scss";
 
 const Dropdown = ({ onOptionClick, options, selectedOption }) => {
-
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [filteredOptions, setFilteredOptions] = useState(
     options.filter((option) => option !== selectedOption.name)
@@ -17,44 +16,46 @@ const Dropdown = ({ onOptionClick, options, selectedOption }) => {
     );
   }, [selectedOption]);
 
-  
-
   useEffect(() => {
     const closeOptions = (e) => {
-      if(dropdownOptions.current && !dropdownOptions.current.contains(event.target)) {
+      if (
+        dropdownOptions.current &&
+        !dropdownOptions.current.contains(event.target)
+      ) {
         setDropdownOpen(false);
       }
-    }
+    };
 
     document.addEventListener("mousedown", closeOptions);
     return () => {
       document.removeEventListener("mousedown", closeOptions);
-    }
-
-  },[dropdownOptions])
-
+    };
+  }, [dropdownOptions]);
 
   const handleOnClick = (optionValue) => {
     setDropdownOpen(false);
     onOptionClick(optionValue);
-
   };
 
   return (
     <div className="dropdown" ref={dropdownOptions}>
       <div onClick={() => setDropdownOpen(!dropdownOpen)}>
-        <h1>{selectedOption.name}
+        <h1>
+          {selectedOption.name}
           <span>
             <DropdownIcon />
           </span>
         </h1>
-        
       </div>
       {dropdownOpen && (
-        <div className="dropdown-option-container" >
+        <div className="dropdown-option-container">
           <ul>
             {filteredOptions.map((option) => (
-              <li key={option} onClick={() => handleOnClick(option)} value={option}>
+              <li
+                key={option}
+                onClick={() => handleOnClick(option)}
+                value={option}
+              >
                 {option}
               </li>
             ))}

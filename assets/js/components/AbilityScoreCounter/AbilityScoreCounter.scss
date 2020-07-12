@@ -1,4 +1,6 @@
-.AbilityScoreCounter {
+@import "../../../scss/variables";
+
+.ability-score-counter {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,7 +9,7 @@
   height: 45%;
   min-width: 155px;
 
-  div {
+  .counter-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,7 +20,7 @@
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      background-color: #39383e;
+      background-color: $background-highlight-color;
       border-radius: 100%;
       box-shadow: 0px 0px 10px white;
 
@@ -26,8 +28,8 @@
       height: 115.69px;
 
       div {
-        color: #ffffff;
-        font-family: Montserrat;
+        color: $text-color;
+        font-family: $text-font;
         font-size: 36px;
         font-weight: 700;
         line-height: 46px;
@@ -47,9 +49,9 @@
         border-radius: 100%;
 
         padding: none;
-        color: #ffffff;
+        color: $text-color;
 
-        font-family: Montserrat;
+        font-family: $text-font;
         font-size: 30px;
         font-weight: 700;
         line-height: 30px;
@@ -72,8 +74,8 @@
       width: 50px;
       height: 30px;
 
-      color: #ffffff;
-      font-family: Montserrat;
+      color: $text-color;
+      font-family: $text-font;
       font-size: 23px;
       font-weight: 700;
       text-align: center;
@@ -84,8 +86,8 @@
   }
 
   .attribute {
-    color: #ffffff;
-    font-family: Bangers;
+    color: $text-color;
+    font-family: $heading-font;
     font-size: 28px;
     font-weight: 400;
     letter-spacing: 1px;
@@ -140,8 +142,8 @@
   }
 
   p {
-    color: #ffffff;
-    font-family: Montserrat;
+    color: $text-color;
+    font-family: $text-font;
     font-size: 18px;
     font-weight: 500;
     line-height: 30px;
@@ -151,7 +153,7 @@
     margin: 0;
 
     span {
-      font-family: Bangers;
+      font-family: $heading-font;
       font-size: 20px;
       font-weight: 500;
       letter-spacing: 1px;

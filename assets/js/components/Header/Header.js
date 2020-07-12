@@ -15,7 +15,6 @@ const Header = ({ racesArray, setCurrentRace, currentRace }) => {
 
   const options = races.map((race) => race.name);
 
-
   return (
     <div className="header">
       <Dropdown
@@ -24,22 +23,22 @@ const Header = ({ racesArray, setCurrentRace, currentRace }) => {
         selectedOption={currentRace}
       ></Dropdown>
       <div className="stat-container">
-        <div>
-          <div>
+        <div className="stat-column">
+          <div className="stat-row">
             <h2>Speed:</h2>
             <p>{speed}ft</p>
           </div>
-          <div>
+          <div className="stat-row">
             <h2>Lifespan:</h2>
             <p>~{lifespan}yrs</p>
           </div>
         </div>
-        <div>
-          <div>
+        <div className="stat-column">
+          <div className="stat-row">
             <h2>Dark Vision:</h2>
             <p>{darkvision === "0" ? "N/A" : `${darkvision}ft`}</p>
           </div>
-          <div>
+          <div className="stat-row">
             <h2>Size:</h2>
             <p>{size}</p>
           </div>
