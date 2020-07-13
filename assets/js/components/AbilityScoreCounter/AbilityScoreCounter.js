@@ -9,7 +9,7 @@ import ChevronOutline from "../../../images/icons/chevron-outline.svg";
 import "./AbilityScoreCounter.scss";
 
 const AbilityScoreCounter = ({
-  attribute,
+  attribute = {},
   racialBonus,
   dynamicScore,
   setDynamicScore,
@@ -27,6 +27,8 @@ const AbilityScoreCounter = ({
         : attribute.abilityScore + racialBonus
     );
   }, [attribute.pointCost, racialBonus, dynamicFlag]);
+
+  console.log(attribute);
 
   const attText = {
     strength: {

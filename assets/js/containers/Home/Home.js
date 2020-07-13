@@ -7,7 +7,7 @@ import { useQuery } from "@apollo/react-hooks";
 import getRaces from "../../graphql/getRaces";
 
 const Home = () => {
-  const { loading, error, data } = useQuery(getRaces);
+  const { data } = useQuery(getRaces);
 
   const { races } = data || [];
 
