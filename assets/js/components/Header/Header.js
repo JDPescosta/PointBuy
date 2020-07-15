@@ -15,33 +15,28 @@ const Header = ({ racesArray, setCurrentRace, currentRace }) => {
 
   const options = races.map((race) => race.name);
 
+  const Stat = ({label, info}) => (
+    <div className="stat">
+      <h2>{label}</h2>
+      <p>{info}</p>
+    </div>
+  );
+
   return (
     <div className="header">
       <Dropdown
         onOptionClick={changeRace}
         options={options}
         selectedOption={currentRace}
-      ></Dropdown>
+      />
       <div className="stat-container">
         <div className="stat-column">
-          <div className="stat-row">
-            <h2>Speed:</h2>
-            <p>{speed}ft</p>
-          </div>
-          <div className="stat-row">
-            <h2>Lifespan:</h2>
-            <p>~{lifespan}yrs</p>
-          </div>
+          <Stat label="Speed:" info={`${speed}ft`} />
+          <Stat label="Lifespan:" info={`~${lifespan}yrs`} />
         </div>
         <div className="stat-column">
-          <div className="stat-row">
-            <h2>Dark Vision:</h2>
-            <p>{darkvision === "0" ? "N/A" : `${darkvision}ft`}</p>
-          </div>
-          <div className="stat-row">
-            <h2>Size:</h2>
-            <p>{size}</p>
-          </div>
+          <Stat label="Dark Vision:" info={`${darkvision}ft`} />
+          <Stat label="Size:" info={size} />
         </div>
       </div>
     </div>

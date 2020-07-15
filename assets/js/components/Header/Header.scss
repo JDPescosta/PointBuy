@@ -29,7 +29,7 @@
       display: flex;
       flex-direction: column;
 
-      .stat-row {
+      .stat {
         width: 100%;
         height: 50%;
         display: flex;
@@ -76,7 +76,7 @@
       margin: 3% 8% 0 8%;
       min-width: 340px;
       div {
-        div {
+        .stat {
           h2 {
             font-size: 22px;
           }
