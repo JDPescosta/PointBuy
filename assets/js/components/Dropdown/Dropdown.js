@@ -37,6 +37,12 @@ const Dropdown = ({ onOptionClick, options, selectedOption }) => {
     onOptionClick(optionValue);
   };
 
+  const Option = (option) => (
+    <li key={option} onClick={() => handleOnClick(option)} value={option}>
+      {option}
+    </li>
+  );
+
   return (
     <div className="dropdown" ref={dropdownOptions}>
       <div onClick={() => setDropdownOpen(!dropdownOpen)}>
@@ -51,13 +57,7 @@ const Dropdown = ({ onOptionClick, options, selectedOption }) => {
         <div className="dropdown-option-container">
           <ul>
             {filteredOptions.map((option) => (
-              <li
-                key={option}
-                onClick={() => handleOnClick(option)}
-                value={option}
-              >
-                {option}
-              </li>
+              <Option option={option} />
             ))}
           </ul>
         </div>
