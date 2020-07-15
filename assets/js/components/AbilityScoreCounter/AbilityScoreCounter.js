@@ -28,8 +28,6 @@ const AbilityScoreCounter = ({
     );
   }, [attribute.pointCost, racialBonus, dynamicFlag]);
 
-  console.log(attribute);
-
   const attText = {
     strength: {
       text: [
