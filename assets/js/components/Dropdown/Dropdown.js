@@ -37,7 +37,7 @@ const Dropdown = ({ onOptionClick, options, selectedOption }) => {
     onOptionClick(optionValue);
   };
 
-  const Option = (option) => (
+  const Option = ({option}) => (
     <li key={option} onClick={() => handleOnClick(option)} value={option}>
       {option}
     </li>
