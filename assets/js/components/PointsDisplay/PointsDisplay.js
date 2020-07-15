@@ -13,27 +13,22 @@ const PointsDisplay = ({ attributes, reset, setTotalCost, totalCost }) => {
     );
   }, [attributes]);
 
+  const PointsRow = ({ firstIdx, lastIdx }) => (
+    <div className="points-row">
+      {attributes.slice(firstIdx, lastIdx).map((att) => (
+        <span key={att.name.substring(0, 3)}>{`${att.name.substring(0, 3)}: ${
+          att.pointCost
+        } | `}</span>
+      ))}
+    </div>
+  );
+
   return (
     <div className="points-display">
       <div className="points-container">
-        <div className="points-row">
-          {attributes.slice(0, 3).map((att) => (
-            <span key={att.name.substring(0, 3)}>{`${att.name.substring(
-              0,
-              3
-            )}: ${att.pointCost} | `}</span>
-          ))}
-        </div>
-        <div className="points-row">
-          {attributes.slice(3, 6).map((att) => (
-            <span key={att.name.substring(0, 3)}>{`${att.name.substring(
-              0,
-              3
-            )}: ${att.pointCost} | `}</span>
-          ))}
-        </div>
+        <PointsRow firstIdx={0} lastIdx={3} />
+        <PointsRow firstIdx={3} lastIdx={6} />
       </div>
-
       <span className="total">{totalCost}/27 Points</span>
       <IconButton
         className="reset"
