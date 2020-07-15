@@ -3,7 +3,6 @@ import "phoenix_html";
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import Home from "./containers/Home/Home";
-import Loading from "./components/Loading/Loading"
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 
