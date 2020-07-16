@@ -23,6 +23,7 @@
     width: 55vw;
     max-width: 970px;
     margin: 1%;
+    margin-left: -0.3rem;
     display: flex;
 
     flex-direction: column;
@@ -64,7 +65,7 @@
       overflow-y: auto;
       padding: 5px;
 
-      div {
+      .unique-racial {
         h3 {
           margin-top: 0;
           color: $text-color;
@@ -109,13 +110,13 @@
     .left-container {
       top: 0;
       left: 0;
-      width: 98vw;
+      width: 100vw;
       .attribute-container {
         justify-content: space-around;
       }
     }
     .right-container {
-      width: 95%;
+      width: 100vw;
     }
   }
 }

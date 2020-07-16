@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import "./Home.scss";
+import { useQuery } from "@apollo/react-hooks";
+
 import AbilityScoreCounter from "../../components/AbilityScoreCounter/AbilityScoreCounter";
 import PointsDisplay from "../../components/PointsDisplay/PointsDisplay";
 import Header from "../../components/Header/Header";
-import { useQuery } from "@apollo/react-hooks";
+
 import getRaces from "../../graphql/getRaces";
+
+import "./Home.scss";
 
 const Home = () => {
   const { data } = useQuery(getRaces);
@@ -106,6 +109,13 @@ const Home = () => {
     },
   ];
 
+  const UniqueRacial = ({ racial: { name, racialText } }) => (
+    <div className={"unique-racial"}>
+      <h3>{name}:</h3>
+      <p>{racialText}</p>
+    </div>
+  );
+
   return (
     <>
       {data && selectedRace && (
@@ -119,7 +129,7 @@ const Home = () => {
             <div className="attribute-container">
               {attributes.map((att, index) => (
                 <AbilityScoreCounter
-                  key={index}
+                  key={`${att}-counter-${index}`}
                   attribute={att}
                   racialBonus={checkRacialBonus(att.name)}
                   dynamicScore={dynamicScore}
@@ -132,7 +142,7 @@ const Home = () => {
               reset={reset}
               setTotalCost={setTotalCost}
               totalCost={totalCost}
-            ></PointsDisplay>
+            />
           </div>
           <div className="right-container">
             <img
@@ -141,10 +151,7 @@ const Home = () => {
             ></img>
             <div className="unique-racials-container">
               {selectedRace.uniqueRacials.sort().map((racial) => (
-                <div key={racial.name}>
-                  <h3>{racial.name}:</h3>
-                  <p>{racial.racialText}</p>
-                </div>
+                <UniqueRacial racial={racial} key={racial.name} />
               ))}
             </div>
           </div>
