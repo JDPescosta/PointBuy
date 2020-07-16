@@ -17,9 +17,10 @@ const AbilityScoreCounter = ({
   const [totalScore, setTotalScore] =
     racialBonus === "dynamic" ? useState(8) : useState(8 + racialBonus);
   const [dynamicFlag, setDynamicFlag] = useState(false);
+  const [displayBonus, setDisplayBonus] = useState(-1);
 
   useEffect(() => {
-    let dynamicBonus = dynamicFlag ? 1 : 0;
+    let dynamicBonus = +dynamicFlag;
 
     setTotalScore(
       racialBonus === "dynamic"
@@ -27,6 +28,15 @@ const AbilityScoreCounter = ({
         : attribute.abilityScore + racialBonus
     );
   }, [attribute.pointCost, racialBonus, dynamicFlag]);
+
+  useEffect(() => {
+    setDisplayBonus(genDisplayBonus(totalScore));
+  }, [totalScore]);
+
+  const genDisplayBonus = (score) =>
+    Math.floor((totalScore - 10) / 2) > 0
+      ? `+ ${Math.floor((totalScore - 10) / 2)}`
+      : Math.floor((totalScore - 10) / 2);
 
   const attText = {
     strength: {
@@ -47,10 +57,7 @@ const AbilityScoreCounter = ({
       text: [
         {
           label: "Base initiative:",
-          value:
-            Math.floor((totalScore - 10) / 2) > 0
-              ? `+ ${Math.floor((totalScore - 10) / 2)}`
-              : Math.floor((totalScore - 10) / 2),
+          value: displayBonus,
         },
         { label: "Skills:", value: "Acrobatics, Sleight of hand, Stealth" },
       ],
@@ -60,11 +67,7 @@ const AbilityScoreCounter = ({
         {
           label: "Starting Hitpoints:",
           value: `Class Starting Hitpoints 
-          ${
-            Math.floor((totalScore - 10) / 2) >= 0
-              ? `+ ${Math.floor((totalScore - 10) / 2)}`
-              : Math.floor((totalScore - 10) / 2)
-          }`,
+          ${displayBonus}`,
         },
       ],
     },
@@ -124,7 +127,7 @@ const AbilityScoreCounter = ({
         <div className="score-display">
           <IconButton
             tabCheck={false}
-            isDisabled={attribute.abilityScore <= 8 ? true : false}
+            isDisabled={attribute.abilityScore <= 8}
             onClick={() => modifyAbilityScore(0)}
           >
             <MinusIcon />
@@ -132,22 +135,18 @@ const AbilityScoreCounter = ({
           <div>{totalScore}</div>
           <IconButton
             tabCheck={false}
-            isDisabled={attribute.abilityScore >= 15 ? true : false}
+            isDisabled={attribute.abilityScore >= 15}
             onClick={() => modifyAbilityScore(1)}
           >
             <PlusIcon />
           </IconButton>
         </div>
-        <div className="bonus-display">
-          {Math.floor((totalScore - 10) / 2) > 0
-            ? `+ ${Math.floor((totalScore - 10) / 2)}`
-            : Math.floor((totalScore - 10) / 2)}
-        </div>
+        <div className="display-bonus">{displayBonus}</div>
       </div>
       <h2 className="attribute">
         {attribute.name}
         {racialBonus === "dynamic" && (dynamicFlag || dynamicScore < 2) && (
-          <span>
+          <span className={"chevron-anchor"}>
             <IconButton
               tabCheck={false}
               isDisabled={false}
@@ -159,12 +158,12 @@ const AbilityScoreCounter = ({
           </span>
         )}
         {racialBonus === 1 && (
-          <span>
+          <span className={"chevron-anchor"}>
             <Chevron className="chevron" />
           </span>
         )}
         {racialBonus === 2 && (
-          <span>
+          <span className={"chevron-anchor"}>
             <DoubleChevron className="chevron" />
           </span>
         )}

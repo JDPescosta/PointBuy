@@ -63,7 +63,7 @@
       }
     }
 
-    .bonus-display {
+    .display-bonus {
       position: absolute;
       bottom: 0;
       transform: translateY(30%);
@@ -102,40 +102,31 @@
     flex-direction: row;
     justify-content: center;
 
-    span {
+    .chevron-anchor {
       width: 32px;
       position: relative;
-      .chevron{
-        position: absolute;   
+      .chevron {
+        position: absolute;
         top: -20%;
         left: 10%;
-        fill:none;
+        fill: none;
         width: 32px;
         height: 32px;
       }
 
       button {
-        // position: absolute;
-        // top: -20%;
-        // left: 10%;
-       
-        
-
         background-color: transparent;
         border: none;
         width: 32px;
         height: 32px;
-        
 
-
-        .chevron{
+        .chevron {
           position: absolute;
           top: -20%;
           left: 10%;
-          fill:none;
+          fill: none;
           width: 32px;
           height: 32px;
-          
         }
       }
     }
