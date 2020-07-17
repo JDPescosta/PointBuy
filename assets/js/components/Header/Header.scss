@@ -1,0 +1,90 @@
+@import "../../../scss/variables";
+
+.header {
+  background-color: $background-highlight-color;
+  border-radius: 10px;
+  width: 85%;
+  height: 110px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+  color: $text-color;
+  font-family: $text-font;
+  margin-bottom: 3%;
+
+  .stat-container {
+    width: 55%;
+    min-width: 380px;
+    height: 80%;
+    margin-right: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .stat-column {
+      height: 100%;
+      width: 48%;
+      display: flex;
+      flex-direction: column;
+
+      .stat {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: row;
+
+        justify-content: space-between;
+        h2 {
+          margin: 7px 0 7px 0;
+          text-align: left;
+          font-family: $heading-font;
+          font-weight: 300;
+          font-size: 26px;
+          letter-spacing: 1px;
+        }
+        p {
+          margin: 7px 0 7px 3px;
+          font-size: 26px;
+          font-weight: 700;
+          line-height: 33px;
+          text-align: left;
+          font-size: 22px;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1160px) {
+  .header {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 655px) {
+  .header {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+
+    .stat-container {
+      width: 92%;
+      margin: 3% 8% 0 8%;
+      min-width: 340px;
+      div {
+        .stat {
+          h2 {
+            font-size: 22px;
+          }
+          p {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -29,8 +29,36 @@ module.exports = (env, options) => ({
         }
       },
       {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {}
+          },
+          {
+            loader: 'sass-loader',
+            options: {}
+          }
+        ]
+      },
+      {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
+        use: ['css-loader', 'sass-loader']
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "babel-loader"
+          },
+          {
+            loader: "react-svg-loader",
+            options: {
+              jsx: false // true outputs JSX tags
+            }
+          }
+        ]
       }
     ]
   },
