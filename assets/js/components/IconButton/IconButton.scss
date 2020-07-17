@@ -1,0 +1,28 @@
+@import "../../../scss/variables";
+
+.button-container {
+  display: flex;
+  align-items: center;
+  border: none;
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  
+
+  svg  {
+    fill: white;
+  }
+ 
+}
+
+.is-disabled {
+  opacity: 25%;
+}
+
+.button-container:not(.tab-outlining):focus {
+  outline: none;
+}
+
+.tab-outlining:focus {
+  outline-color: #BF0628;
+}

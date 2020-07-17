@@ -1,20 +1,24 @@
 # Pointbuy
 
-To start your Phoenix server:
+Hi, 
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+Thanks for taking the time to look at my Point-buy calculator! 
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+This calulator is intended as a tool for creating characters for D&D 5th edition. The D&D rules for Point-buy can be found here under Variant: Customizing Ability Scores: [https://www.dndbeyond.com/sources/basic-rules/step-by-step-characters#3DetermineAbilityScores]
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+## Installation
 
-## Learn more
+If you want to install this project locally, navigate to the project file in cmd and install it's dependancies with the following commands:
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+```bash
+yarn install
+mix deps.get
+```
+
+To then start the project, run the following:
+
+```bash
+iex -S mix phx.server
+```
+
+The project should now be hosted at [http://localhost:4000/] on your machine.

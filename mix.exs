@@ -45,10 +45,10 @@ defmodule Pointbuy.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:absinthe, "~>1.4.0"},
       {:absinthe_plug, "~>1.4.5"},
-      {:ex_machina, "~>2.1"},
       {:ecto_enum, "~>1.4"},
       {:faker, "~>0.13"},
-      {:dataloader, "~>1.0.2"}
+      {:dataloader, "~>1.0.2"},
+      {:csv, "~> 2.3"}
     ]
   end
 

@@ -23,6 +23,6 @@ defmodule PointbuyWeb.Router do
   scope "/api" do
     # pipe_through :api
     forward("/graphiql", Absinthe.Plug.GraphiQL, schema: PointbuyWeb.Schema)
+    forward("/", Absinthe.Plug, schema: PointbuyWeb.Schema)
   end
-
 end
