@@ -46,7 +46,6 @@ defmodule Pointbuy.MixProject do
       {:absinthe, "~>1.4.0"},
       {:absinthe_plug, "~>1.4.5"},
       {:ecto_enum, "~>1.4"},
-      {:faker, "~>0.13"},
       {:dataloader, "~>1.0.2"},
       {:csv, "~> 2.3"}
     ]
