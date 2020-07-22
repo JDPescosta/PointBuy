@@ -35,7 +35,7 @@ const Header = ({ racesArray, setCurrentRace, currentRace }) => {
           <Stat label="Lifespan:" info={`~${lifespan}yrs`} />
         </div>
         <div className="stat-column">
-          <Stat label="Dark Vision:" info={`${darkvision}ft`} />
+          <Stat label="Dark Vision:" info={darkvision === 0 ? 'N/A':`${darkvision}ft`} />
           <Stat label="Size:" info={size} />
         </div>
       </div>
