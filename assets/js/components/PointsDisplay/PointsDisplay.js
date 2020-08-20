@@ -29,7 +29,7 @@ const PointsDisplay = ({ attributes, reset, setTotalCost, totalCost }) => {
         <PointsRow firstIdx={0} lastIdx={3} />
         <PointsRow firstIdx={3} lastIdx={6} />
       </div>
-      <span className="total">{totalCost}/27 Points</span>
+      <span className={`total ${totalCost > 27 && 'over-total'}`}>{totalCost}/27 Points</span>
       <IconButton
         className="reset"
         tabCheck={0}
