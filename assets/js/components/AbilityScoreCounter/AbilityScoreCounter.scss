@@ -105,6 +105,29 @@
     .chevron-anchor {
       width: 32px;
       position: relative;
+      .chevron-tooltip{
+        font: 14px $text-font;
+        color: white;
+        background-color: #1c1c1c;
+        position: absolute;
+        display: inline-block;
+        top: 30px;
+        right: -25px;
+        border-radius: 10px;
+        width: 100px;
+        padding: 15px;
+        text-transform: none;
+      }
+      .chevron-tooltip::after{
+        content: " ";
+        position: absolute;
+        bottom: 100%;
+        left: 90%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color:  transparent transparent #1c1c1c transparent ;
+      }
       .chevron {
         position: absolute;
         top: -20%;

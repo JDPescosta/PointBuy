@@ -18,6 +18,7 @@ const AbilityScoreCounter = ({
     racialBonus === "dynamic" ? useState(8) : useState(8 + racialBonus);
   const [dynamicFlag, setDynamicFlag] = useState(false);
   const [displayBonus, setDisplayBonus] = useState(-1);
+  const [tooltipShown, setTooltipShown] = useState(false);
 
   useEffect(() => {
     let dynamicBonus = +dynamicFlag;
@@ -121,6 +122,37 @@ const AbilityScoreCounter = ({
     attribute.setAbilityScore(score);
   };
 
+  const ChevronBonus = ({racialBonus, dynamicFlag, dynamicScore}) => (
+    <div onMouseEnter={() => setTooltipShown(true)} onMouseLeave={() => setTooltipShown(false)}>
+      {racialBonus === "dynamic" && (dynamicFlag || dynamicScore < 2) && (
+        <span className={"chevron-anchor"}>
+          {tooltipShown && (
+            <div className="chevron-tooltip">
+              {dynamicFlag && "You've increased this Ability Score by 1."}
+              {!dynamicFlag && "You can choose to increase this ability score due to your Ability Score Increase racial."}
+            </div>
+          )}
+          <IconButton
+            tabCheck={false}
+            isDisabled={false}
+            onClick={modifyDynamicScore}
+          >
+            {dynamicFlag && <Chevron className="chevron" />}
+            {!dynamicFlag && <ChevronOutline className="chevron" />}
+          </IconButton>
+        </span>
+      )}
+      {racialBonus > 0 && (
+        <span className={"chevron-anchor"}>
+          {tooltipShown && (
+            <div className="chevron-tooltip">Your race is increaing this ability score by {racialBonus}.</div>
+          )}
+          {racialBonus === 1 ? <Chevron className="chevron" /> : <DoubleChevron className="chevron" />}
+        </span>
+      )}
+    </div>
+  );
+
   return (
     <div className="ability-score-counter">
       <div className="counter-container">
@@ -145,28 +177,7 @@ const AbilityScoreCounter = ({
       </div>
       <h2 className="attribute">
         {attribute.name}
-        {racialBonus === "dynamic" && (dynamicFlag || dynamicScore < 2) && (
-          <span className={"chevron-anchor"}>
-            <IconButton
-              tabCheck={false}
-              isDisabled={false}
-              onClick={modifyDynamicScore}
-            >
-              {dynamicFlag && <Chevron className="chevron" />}
-              {!dynamicFlag && <ChevronOutline className="chevron" />}
-            </IconButton>
-          </span>
-        )}
-        {racialBonus === 1 && (
-          <span className={"chevron-anchor"}>
-            <Chevron className="chevron" />
-          </span>
-        )}
-        {racialBonus === 2 && (
-          <span className={"chevron-anchor"}>
-            <DoubleChevron className="chevron" />
-          </span>
-        )}
+        <ChevronBonus racialBonus={racialBonus} dynamicFlag={dynamicFlag} dynamicScore={dynamicScore}/>
       </h2>
 
       {attText[attribute.name].text.map(({ label, value }, index) => (
