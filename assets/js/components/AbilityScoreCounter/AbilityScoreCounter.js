@@ -39,8 +39,6 @@ const AbilityScoreCounter = ({
       ? `+ ${Math.floor((totalScore - 10) / 2)}`
       : Math.floor((totalScore - 10) / 2);
 
-  console.log(parseInt(displayBonus));
-
   const attText = {
     strength: {
       text: [
