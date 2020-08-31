@@ -39,6 +39,8 @@ const AbilityScoreCounter = ({
       ? `+ ${Math.floor((totalScore - 10) / 2)}`
       : Math.floor((totalScore - 10) / 2);
 
+  console.log(parseInt(displayBonus));
+
   const attText = {
     strength: {
       text: [
@@ -66,9 +68,9 @@ const AbilityScoreCounter = ({
     constitution: {
       text: [
         {
-          label: "Starting Hitpoints:",
-          value: `Class Starting Hitpoints 
-          ${displayBonus}`,
+          label: "Hitpoint Bonus:",
+          value: `Bonus hitpoints gained each level:  
+          ${racialBonus === 2 ? `+ ${Math.floor((totalScore - 10) / 2) + 1}` : displayBonus}`, //This takes into account Hill Dwarves racial of +1 to hp a level 
         },
       ],
     },
