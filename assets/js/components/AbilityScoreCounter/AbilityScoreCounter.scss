@@ -22,7 +22,8 @@
       justify-content: center;
       background-color: $background-highlight-color;
       border-radius: 100%;
-      box-shadow: 0px 0px 10px white;
+
+      border: solid 4px white;
 
       width: 115.69px;
       height: 115.69px;
@@ -33,6 +34,7 @@
         font-size: 36px;
         font-weight: 700;
         line-height: 46px;
+        min-width: 40px;
         text-align: center;
       }
 
@@ -40,7 +42,7 @@
         position: relative;
 
         display: flex;
-        align-items: center;
+        align-items: space-between;
 
         justify-content: center;
 
@@ -48,7 +50,6 @@
         border: none;
         border-radius: 100%;
 
-        padding: none;
         color: $text-color;
 
         font-family: $text-font;
@@ -56,10 +57,24 @@
         font-weight: 700;
         line-height: 30px;
         text-align: center;
-        margin: 0 auto;
 
-        width: 50px;
-        height: 50px;
+        margin: 0 20px 0 20px;
+
+        min-width: 37px;
+        height: 37px;
+        border-radius: 100%;
+        background-color: white;
+      }
+      button:disabled {
+        visibility: hidden;
+      }
+      button:hover{
+        -webkit-box-shadow: 0 0 2px 2px #ccc;  
+        -moz-box-shadow:    0 0 2px 2px #ccc;  
+        box-shadow:         0 0 2px 2px #ccc;
+      }
+      button svg {
+        fill: $background-highlight-color;
       }
     }
 
@@ -69,7 +84,7 @@
       transform: translateY(30%);
 
       background-color: #1c1c1c;
-      border: 2px solid #8492a6;
+      border: 2px solid white;
       border-radius: 10px;
       width: 50px;
       height: 30px;
@@ -105,7 +120,7 @@
     .chevron-anchor {
       width: 32px;
       position: relative;
-      .chevron-tooltip{
+      .chevron-tooltip {
         font: 14px $text-font;
         color: white;
         background-color: #1c1c1c;
@@ -118,7 +133,7 @@
         padding: 15px;
         text-transform: none;
       }
-      .chevron-tooltip::after{
+      .chevron-tooltip::after {
         content: " ";
         position: absolute;
         bottom: 100%;
@@ -126,7 +141,7 @@
         margin-left: -5px;
         border-width: 5px;
         border-style: solid;
-        border-color:  transparent transparent #1c1c1c transparent ;
+        border-color: transparent transparent #1c1c1c transparent;
       }
       .chevron {
         position: absolute;
