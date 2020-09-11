@@ -37,11 +37,15 @@
           height: 25px;
           width: 25px;
         }
+        
       }
     }
 
     h1:hover {
-      text-decoration: underline;
+      text-shadow: 0 0 8px #ccc;
+      span svg{
+        filter: drop-shadow(0 0 4px #ccc);
+      }
     }
   }
 
