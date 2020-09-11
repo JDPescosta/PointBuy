@@ -13,6 +13,7 @@
   justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
+  border: solid 4px white;
 
   .points-container {
     display: flex;
@@ -47,8 +48,12 @@
 
   svg {
     fill: white;
-    height: 32px;
-    width: 32px;
+    height: 31px;
+    width: 31px;
+    
+  }
+  svg:hover{
+    filter: drop-shadow(0 0 4px #ccc);
   }
 }
 

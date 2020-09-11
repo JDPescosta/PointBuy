@@ -40,26 +40,18 @@
 
       button {
         position: relative;
-
         display: flex;
         align-items: space-between;
-
         justify-content: center;
-
         background-color: transparent;
         border: none;
-        border-radius: 100%;
-
         color: $text-color;
-
         font-family: $text-font;
         font-size: 30px;
         font-weight: 700;
         line-height: 30px;
         text-align: center;
-
         margin: 0 20px 0 20px;
-
         min-width: 37px;
         height: 37px;
         border-radius: 100%;
@@ -165,6 +157,9 @@
           fill: none;
           width: 32px;
           height: 32px;
+        }
+        svg:hover{
+          filter: drop-shadow(0 0 4px #ccc);
         }
       }
     }
