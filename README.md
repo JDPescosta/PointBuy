@@ -4,7 +4,7 @@ Hi,
 
 Thanks for taking the time to look at my Point-buy calculator! 
 
-This calulator is intended as a tool for creating characters for D&D 5th edition. The D&D rules for Point-buy can be found here under Variant: Customizing Ability Scores: [https://www.dndbeyond.com/sources/basic-rules/step-by-step-characters#3DetermineAbilityScores]
+This calculator is intended as a tool for creating characters for D&D 5th edition. The D&D rules for Point-buy can be found here under Variant: Customizing Ability Scores: [https://www.dndbeyond.com/sources/basic-rules/step-by-step-characters#3DetermineAbilityScores]
 
 ## Installation
 
